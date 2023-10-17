@@ -1,5 +1,6 @@
 <?php
 class Cinema extends CI_Controller {
+public $tarifsewa, $total;
     public function index()
     {
         $this->load->view('view-input-cinema');
@@ -18,5 +19,3 @@ $data= [
         $this->load->view('view-output-cinema',$data);
     }
 }
-
- 
