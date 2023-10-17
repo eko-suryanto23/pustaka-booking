@@ -1,30 +1,22 @@
 <?php
 class Cinema extends CI_Controller {
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/userguide3/general/urls.html
-	 */
-	public function index()
-	{
-	 $this->load->view('view-input-cinema');
-	}
-
-    public function output_cinema(){
-        $this->load->view('view-output-cinema');
+    public function index()
+    {
+        $this->load->view('view-input-cinema');
     }
-
+    public function cetak()
+    {
+$data= [
+        'nmpemesan'=> $this->input->post('nmpemesan'),
+        'jdlfilm'=> $this->input->post('jdlfilm'),
+        'jam'=> $this->input->post('jam'),
+        'tipe'=> $this->input->post('tipe'),
+        'jmlpesan'=> $this->input->post('jmlpesan'),
+        'tarifsewa'=> $this->input->post('tarifsewa'),
+        'total'=> $this->input->post('total'),
+];
+        $this->load->view('view-output-cinema',$data);
+    }
 }
 
  
